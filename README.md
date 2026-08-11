@@ -98,3 +98,180 @@ The target variable is:
 ```text
 0 → Not Churned
 1 → Churned
+
+## 🤖 Machine Learning
+
+The following models were evaluated:
+
+- Logistic Regression
+- Random Forest
+- XGBoost
+
+Evaluation metrics:
+
+**Accuracy, Precision, Recall, F1 Score**
+
+### Final Model Performance
+
+The final Logistic Regression model achieved:
+
+| Metric | Score |
+|---|---:|
+| Accuracy | 65.81% |
+| Precision | 60.39% |
+| Recall | 63.92% |
+| F1 Score | 62.10% |
+
+The model uses 7 customer behavioral features.
+
+## 🌐 FastAPI
+
+The trained model is deployed using **FastAPI**.
+
+### Endpoint
+
+```text
+POST /predict
+Example Request
+{
+  "TotalSpent": 500,
+  "TotalOrders": 3,
+  "TotalQuantity": 20,
+  "AverageOrderValue": 166.67,
+  "CustomerLifetime": 100,
+  "Recency": 80,
+  "Frequency": 3
+}
+Example Response
+{
+  "churn_prediction": 0,
+  "churn_probability": 0.3921,
+  "risk_level": "LOW"
+}
+💻 Web Dashboard
+
+The frontend was developed using:
+
+HTML
+CSS
+JavaScript
+
+The dashboard sends customer information to the FastAPI backend and displays the prediction, churn probability, and risk level.
+
+Application Architecture
+              Customer Data
+                   ↓
+             Web Dashboard
+                   ↓
+              FastAPI API
+                   ↓
+          Trained ML Model
+                   ↓
+        ┌──────────┴──────────┐
+        ↓                     ↓
+ Churn Prediction       Churn Probability
+                              ↓
+                         Risk Level
+🛠️ Technologies
+
+Programming: Python, JavaScript, SQL, HTML, CSS
+
+Data Analysis: Pandas, NumPy, Matplotlib, Seaborn
+
+Machine Learning: Scikit-learn, Logistic Regression, Random Forest, XGBoost
+
+Backend: FastAPI, Uvicorn, Pydantic
+
+Development: Jupyter Notebook, Git, GitHub
+
+📁 Project Structure
+Intelligent-Sales-Analytics/
+│
+├── backend/
+├── data/
+├── frontendtype/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── ml-api/
+│   ├── main.py
+│   ├── churn_model.pkl
+│   ├── scaler.pkl
+│   ├── features.pkl
+│   └── requirements.txt
+├── notebooks/
+│   └── 01_data_exploration.ipynb
+├── python/
+│   ├── data_cleaning.py
+│   ├── eda.py
+│   ├── feature_engineering.py
+│   └── train_model.py
+├── sql/
+│   ├── schema.sql
+│   └── analysis_queries.sql
+├── .gitignore
+└── README.md
+▶️ How to Run
+1. Clone
+git clone https://github.com/Gaurang-S-Hegde/intelligent-sales-analytics.git
+cd intelligent-sales-analytics
+2. Create Environment
+python -m venv venv
+
+Windows:
+
+venv\Scripts\activate
+3. Install Dependencies
+pip install -r ml-api/requirements.txt
+4. Start FastAPI
+cd ml-api
+uvicorn main:app --reload
+
+API:
+
+http://127.0.0.1:8000
+
+Swagger documentation:
+
+http://127.0.0.1:8000/docs
+5. Start Frontend
+
+Open another terminal:
+
+cd frontendtype
+python -m http.server 5500
+
+Open:
+
+http://127.0.0.1:5500
+🔮 Future Improvements
+Customer segmentation
+SHAP model explainability
+Advanced model tuning
+Interactive analytics charts
+Automated retention recommendations
+Database integration
+Cloud deployment
+Model monitoring and automated retraining
+👨‍💻 Author
+
+Gaurang S. Hegde
+B.Tech Information Technology
+
+Interests: Data Analytics • Machine Learning • AI • Full Stack Development
+
+📌 Project
+
+Intelligent Sales Analytics & Customer Churn Prediction
+
+Built as an end-to-end portfolio project demonstrating Data Analytics + Machine Learning + API Development + Frontend Integration.
+
+
+### After replacing the README
+
+Run these **three commands** in PowerShell:
+
+```powershell
+git add README.md
+git commit -m "Add professional project README"
+git push
